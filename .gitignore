@@ -1,0 +1,10 @@
+*.toc
+*.synctex.gz
+*.synctex.bbl
+*.synctex.blg
+*.log
+*.out
+13-template.pdf
+*.aux
+*.bbl
+*.blg
