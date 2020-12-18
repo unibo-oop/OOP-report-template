@@ -2,21 +2,13 @@
 
 \usepackage{alltt, fancyvrb, url}
 \usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{wrapfig}
-\usepackage{algorithmic}
 \usepackage[utf8]{inputenc}
-\usepackage{fontenc}
-\usepackage{amsmath,stmaryrd,mathtools,algorithm}
-\usepackage{amssymb}
-\usepackage{float}
 \usepackage{hyperref}
-
-% Remove option to use English naming
-\usepackage[italian]{cleveref}
 
 % Questo commentalo se vuoi scrivere in inglese.
 \usepackage[italian]{babel}
+
+\usepackage[italian]{cleveref}
 
 \title{Meta-relazione per\\``Programmazione ad Oggetti''}
 
@@ -171,7 +163,7 @@ Data la complessità di elaborare consigli via AI senza intervento umano, la pri
 
 Il requisito non funzionale riguardante il consumo energetico richiederà studi specifici sulle performance di GLaDOS che non potranno essere effettuati all'interno del monte ore previsto: tale feature sarà oggetto di futuri lavori.
 
-\begin{figure}
+\begin{figure}[h]
 \centering{}
 \includegraphics{img/analysis}
 \caption{Schema UML dell'analisi del problema, con rappresentate le entità principali ed i rapporti fra loro}
@@ -246,7 +238,7 @@ informandoli su quale sia la situazione corrente.
 %
 Conseguentemente, GLaDOS è un ``observable'' per Output.
 
-\begin{figure}[!t]
+\begin{figure}[h]
 \centering{}
 \includegraphics[width=\textwidth]{img/arch}
 \caption{Schema UML architetturale di GLaDOS. L'interfaccia \texttt{GLaDOS} è il controller del sistema, mentre \texttt{Input} ed \texttt{Output} sono le interfacce che mappano la view (o, più correttamente in questo specifico esempio, il boundary). Un'eventuale interfaccia grafica interattiva dovrà implementarle entrambe.}
@@ -343,11 +335,18 @@ Il sistema per la gestione della personalità utilizza il pattern Strategy, come
 \Cref{img:strategy}: le implementazioni di \texttt{Personality} possono essere modificate, e la
 modifica impatta direttamente sul comportamento di GLaDOS.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering{}
 \includegraphics[width=\textwidth]{img/strategy}
 \caption{Rappresentazione UML del pattern Strategy per la personalità di GLaDOS}
 \label{img:strategy}
+\end{figure}
+
+\begin{figure}[h]
+\centering{}
+\includegraphics[width=\textwidth]{img/template}
+\caption{Rappresentazione UML dell'applicazione del pattern Template Method alla gerarchia delle Personalità}
+\label{img:template}
 \end{figure}
 
 Sono state attualmente implementate due personalità, una buona ed una cattiva.
@@ -357,11 +356,11 @@ Dato che le due personalità differiscono solo per il comportamento da effettuar
 Il metodo template è \texttt{onSuccess()}, che chiama un metodo astratto e protetto
 \texttt{makeCake()}.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering{}
-\includegraphics[width=\textwidth]{img/template}
-\caption{Rappresentazione UML dell'applicazione del pattern Template Method alla gerarchia delle Personalità}
-\label{img:template}
+\includegraphics[width=.7\textwidth]{img/observer}
+\caption{Il pattern Observer è usato per consentire a GLaDOS di informare tutti i sistemi di output in ascolto}
+\label{img:observer}
 \end{figure}
 
 Per quanto riguarda il reporting, è stato utilizzato il pattern Observer per consentire la
@@ -370,13 +369,6 @@ comunicazione uno-a-molti fra \texttt{GLaDOS} ed i sistemi di output.
 \texttt{GLaDOS} è observable, e le istanze di \texttt{Input} sono observer.
 %
 Il suo utilizzo è esemplificato in \Cref{img:observer}
-
-\begin{figure}[H]
-\centering{}
-\includegraphics[width=\textwidth]{img/observer}
-\caption{Il pattern Observer è usato per consentire a GLaDOS di informare tutti i sistemi di output in ascolto}
-\label{img:observer}
-\end{figure}
 
 \subsection*{Contro-esempio: pessimo diagramma UML}
 
@@ -394,7 +386,7 @@ Questo schema è fatto male perché:
 \end{itemize}
 
 
-\begin{figure}
+\begin{figure}[h]
 \centering{}
 \includegraphics[width=\textwidth]{img/badarch}
 \caption{Schema UML mal fatto e con una pessima descrizione, che non aiuta a capire. Don't try this at home.}
@@ -579,6 +571,36 @@ spaziatrice, o il tasto ``P'', è necessario che gli studenti lo segnalino.
  \item Si descrivono in modo eccessivamente minuzioso tutte le caratteristiche, anche minori, del software in oggetto.
  \item Manca una descrizione che consenta ad un utente qualunque di utilizzare almeno le funzionalità primarie dell'applicativo.
 \end{itemize}
+
+\chapter{Esercitazioni di laboratorio}
+
+In questo capitolo ciascuno studente elenca gli esercizi di laboratorio che ha svolto
+(se ne ha svolti),
+elencando i permalink dei post sul forum dove è avvenuta la consegna.
+
+\section*{Esempio}
+
+\subsection{Paolino Paperino}
+
+\begin{itemize}
+ \item Laboratorio 04: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=12345#p123456}
+ \item Laboratorio 06: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=22222#p222222}
+ \item Laboratorio 09: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=99999#p999999}
+\end{itemize}
+
+\subsection{Paperon De Paperoni}
+
+\begin{itemize}
+ \item Laboratorio 04: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=12345#p123456}
+ \item Laboratorio 05: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=22222#p222222}
+ \item Laboratorio 06: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=99999#p999999}
+ \item Laboratorio 07: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=22222#p222222}
+ \item Laboratorio 08: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=99999#p999999}
+ \item Laboratorio 09: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=22222#p222222}
+ \item Laboratorio 10: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=99999#p999999}
+ \item Laboratorio 11: \url{https://virtuale.unibo.it/mod/forum/discuss.php?d=22222#p222222}
+\end{itemize}
+
 
 \bibliographystyle{abbrv}
 \bibliography{13-template}
