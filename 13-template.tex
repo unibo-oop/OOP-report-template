@@ -489,7 +489,9 @@ Si ricorda che l'impegno deve giustificare circa 40-50 ore di sviluppo (è norma
 
 Questa sezione, come quella riguardante il design dettagliato va svolta \textbf{singolarmente da ogni membro del gruppo}.
 %
-Ciascuno dovrà mettere in evidenza eventuali particolarità del suo metodo di sviluppo, ed in particolare:
+Nella prima parte, ciascuno dovrà mostrare degli esempi di codice particolarmente ben realizzati,
+che dimostrino proefficienza con funzionalità avanzate del linguaggio e capacità di spingersi oltre le librerie mostrate a lezione.
+
 \begin{itemize}
 	\item \textbf{Elencare} (fare un semplice elenco per punti, non un testo!) le feature \textit{avanzate} del linguaggio e dell'ecosistema Java che sono state
 utilizzate. Le feature di interesse sono:
@@ -498,15 +500,18 @@ utilizzate. Le feature di interesse sono:
 		L'uso di classi generiche di libreria non è considerato avanzato.
 		\item Uso di lambda expressions
 		\item Uso di \texttt{Stream}, di \texttt{Optional} o di altri costrutti funzionali
-		\item Uso della reflection
+		\item Uso di reflection
 		\item Definizione ed uso di nuove annotazioni
 		\item Uso del Java Platform Module System
 		\item Uso di parti della libreria JDK non spiegate a lezione (networking, compressione, parsing XML, eccetera...)
 		\item Uso di librerie di terze parti (incluso JavaFX): Google Guava, Apache Commons...
 	\end{itemize}
-	Si faccia molta attenzione a non scrivere banalità, elencando qui features di tipo ``core'', come le eccezioni, le enumerazioni, o le inner class: nessuna di queste è considerata avanzata.
-	\item Descrivere \textit{molto brevemente} le librerie utilizzate nella propria parte di progetto, se non trattate a lezione (ossia, se librerie di terze parti e/o se componenti del JDK non visti, come le socket). Si ricorda che l'utilizzo di librerie è valutato \emph{positivamente}.
-	\item Sviluppo di algoritmi particolarmente interessanti \emph{non forniti da alcuna libreria} (spesso può convenirvi chiedere sul forum se ci sia una libreria per fare una certa cosa, prima di gettarvi a capofitto per scriverla voi stessi).
+	\item Si faccia molta attenzione a non scrivere banalità, elencando qui features di tipo ``core'', come le eccezioni, le enumerazioni, o le inner class: nessuna di queste è considerata avanzata.
+	\item Per ogni feature avanzata, mostrata, includere:
+	\begin{itemize}
+		\item Nome della feature
+		\item Permalink GitHub al punto nel codice in cui è stata utilizzata
+	\end{itemize}
 \end{itemize}
 
 In questa sezione, \textit{dopo l'elenco},
@@ -532,11 +537,10 @@ e non va in questa sezione.
 \begin{itemize}
 	\item Si elencano gli aspetti avanzati di linguaggio che sono stati impiegati
 	\item Si elencano le librerie che sono state utilizzate
-	\item Si descrivono aspetti particolarmente complicati o rilevanti relativi all'implementazione,
-ad esempio, in un'applicazione performance critical, un uso particolarmente avanzato di meccanismi
-di caching, oppure l'implementazione di uno specifico algoritmo.
-	\item Se si è utilizzato un particolare algoritmo, se ne cita la fonte originale. Ad esempio, se
-si è usato Mersenne Twister per la generazione dei numeri pseudo-random, si cita \cite{mersenne}.
+	\item Per ciascun elemento, si fornisce un permalink
+	\item Ogni permalink fa riferimento ad uno snippet di codice scritto dall'autore della sezione (i docenti verificheranno usando \texttt{git blame})
+	\item Se si è utilizzato un particolare algoritmo, se ne cita la fonte originale.
+	Ad esempio, se si è usato Mersenne Twister per la generazione di numeri pseudo-random, si cita \cite{mersenne}.
 	\item Si identificano parti di codice prese da altri progetti, dal web, o comunque scritte in forma originale da altre persone.
 	In tal senso, si ricorda che agli ingegneri non è richiesto di re-inventare la ruota continuamente:
 	se si cita debitamente la sorgente è tollerato fare uso di di snippet di codice open source per risolvere velocemente problemi non banali.
@@ -548,16 +552,14 @@ si è usato Mersenne Twister per la generazione dei numeri pseudo-random, si cit
 
 \subsection*{Elementi negativi}
 \begin{itemize}
-	\item Si elencano feature core del linguaggio invece di quelle segnalate. Esempi di feature
-core da non menzionare sono:
+	\item Si elencano feature core del linguaggio invece di quelle segnalate. Esempi di feature core da non menzionare sono:
     \begin{itemize}
         \item eccezioni;
         \item classi innestate;
         \item enumerazioni;
         \item interfacce.
     \end{itemize}
-	\item Si elencano applicazioni di terze parti (peggio se per usarle occorre licenza, e lo
-studente ne è sprovvisto) che non c'entrano nulla con lo sviluppo, ad esempio:
+	\item Si elencano applicazioni di terze parti (peggio se per usarle occorre licenza, e lo studente ne è sprovvisto) che non c'entrano nulla con lo sviluppo, ad esempio:
     \begin{itemize}
         \item Editor di grafica vettoriale come Inkscape o Adobe Illustrator;
         \item Editor di grafica scalare come GIMP o Adobe Photoshop;
@@ -575,6 +577,31 @@ studente ne è sprovvisto) che non c'entrano nulla con lo sviluppo, ad esempio:
 	Conseguentemente, è \emph{molto} conveniente \emph{citare} una fonte ed usarla invece di tentare di spacciare per proprio il lavoro di altri.
 	\item Si elencano design pattern
 \end{itemize}
+
+\subsection{Esempio}
+
+\subsubsection{Utilizzo della libreria SLF4J}
+
+Utilizzata in vari punti.
+Un esempio è \url{https://github.com/AlchemistSimulator/Alchemist/blob/5c17f8b76920c78d955d478864ac1f11508ed9ad/alchemist-swingui/src/main/java/it/unibo/alchemist/boundary/swingui/effect/impl/EffectBuilder.java#L49}
+
+\subsubsection{Utilizzo di \texttt{LoadingCache} dalla libreria Google Guava}
+
+Permalink: \url{https://github.com/AlchemistSimulator/Alchemist/blob/d8a1799027d7d685569e15316a32e6394632ce71/alchemist-incarnation-protelis/src/main/java/it/unibo/alchemist/protelis/AlchemistExecutionContext.java#L141-L143}
+
+\subsubsection{Utilizzo di \texttt{Stream} e lambda expressions}
+
+Usate pervasivamente. Il seguente è un singolo esempio.
+Permalink: \url{https://github.com/AlchemistSimulator/Alchemist/blob/d8a1799027d7d685569e15316a32e6394632ce71/alchemist-incarnation-protelis/src/main/java/it/unibo/alchemist/model/ProtelisIncarnation.java#L98-L120}
+
+\subsubsection{Scrittura di metodo generico con parametri contravarianti}
+
+Permalink: \url{https://github.com/AlchemistSimulator/Alchemist/blob/d8a1799027d7d685569e15316a32e6394632ce71/alchemist-incarnation-protelis/src/main/java/it/unibo/alchemist/protelis/AlchemistExecutionContext.java#L141-L143}
+
+\subsubsection{Protezione da corse critiche usando \texttt{Semaphore}}
+
+Permalink: \url{https://github.com/AlchemistSimulator/Alchemist/blob/d8a1799027d7d685569e15316a32e6394632ce71/alchemist-incarnation-protelis/src/main/java/it/unibo/alchemist/model/ProtelisIncarnation.java#L388-L440}
+
 
 \chapter{Commenti finali}
 

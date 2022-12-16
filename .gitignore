@@ -9,3 +9,9 @@
 *.bbl
 *.blg
 bin/
+*.eps
+*.kate-swp
+*.dvi
+*.fdb_latexmk
+*.fls
+template.md
