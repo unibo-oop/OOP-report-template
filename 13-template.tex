@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{cref}
 
 % Questo commentalo se vuoi scrivere in inglese.
 % \usepackage[italian]{babel}
@@ -70,6 +71,7 @@ Functional Requirements
 \begin{itemize}
 	\item View 
 	\item Various kinds of devices
+	\item Should be resonably performant
 \end{itemize}
 Nonfunctional Requirements 
 \begin{itemize}
@@ -86,21 +88,21 @@ Nonfunctional Requirements
 % comportamento dell'applicazione) da quelli non funzionali (requisiti che non riguardano direttamente
 % aspetti comportamentali, come sicurezza, performance, eccetera).
 
-\subsection*{Elementi positivi}
-\begin{itemize}
-	\item Si fornisce una descrizione in linguaggio naturale di ciò che il software dovrà fare.
-	\item Gli obiettivi sono spiegati con chiarezza, per punti.
-	\item Se il software è stato commissionato o è destinato ad un utente o compagnia specifici, il committente viene nominato.
-	\item Se vi sono termini il cui significato non è immediatamente intuibile, essi vengono spiegati.
-	\item Vengono descritti separatamente requisiti funzionali e non funzionali.
-	\item Considerato a un paio di pagine un limite ragionevole alla lunghezza della parte sui requisiti, in quello spazio si deve cercare di chiarire \textit{tutti} gli aspetti dell'applicazione, non lasciando decisioni che impattano la parte ``esterna'' alla discussione del design (che dovrebbe solo occuparsi della parte ``interna'').
-\end{itemize}
+\subsection*{Positives}
+% \begin{itemize}
+% 	\item Si fornisce una descrizione in linguaggio naturale di ciò che il software dovrà fare.
+% 	\item Gli obiettivi sono spiegati con chiarezza, per punti.
+% 	\item Se il software è stato commissionato o è destinato ad un utente o compagnia specifici, il committente viene nominato.
+% 	\item Se vi sono termini il cui significato non è immediatamente intuibile, essi vengono spiegati.
+% 	\item Vengono descritti separatamente requisiti funzionali e non funzionali.
+% 	\item Considerato a un paio di pagine un limite ragionevole alla lunghezza della parte sui requisiti, in quello spazio si deve cercare di chiarire \textit{tutti} gli aspetti dell'applicazione, non lasciando decisioni che impattano la parte ``esterna'' alla discussione del design (che dovrebbe solo occuparsi della parte ``interna'').
+% \end{itemize}
 
-\subsection*{Elementi negativi}
-\begin{itemize}
-	\item Si forniscono indicazioni circa le soluzioni che si vogliono adottare.
-	\item Si forniscono dettagli di tipo tecnico o implementativo (parlando di classi, linguaggi di programmazione, librerie, eccetera).
-\end{itemize}
+\subsection*{Negative}
+% \begin{itemize}
+% 	\item Si forniscono indicazioni circa le soluzioni che si vogliono adottare.
+% 	\item Si forniscono dettagli di tipo tecnico o implementativo (parlando di classi, linguaggi di programmazione, librerie, eccetera).
+% \end{itemize}
 
 \subsection*{Esempio}
 Il software, commissionato dal gestore del centro di ricerca ``Aperture Laboratories Inc.''\footnote{\url{http://aperturescience.com/}}, mira alla costruzione di una intelligenza artificiale di nome GLaDOS (Genetic Lifeform and Disk Operating System).
@@ -109,8 +111,8 @@ Per intelligenza artificiale si intende un software in grado di assumere decisio
 
 \subsubsection{Requisiti funzionali}
 \begin{itemize}
-Dato che homer e un home assistant dovra avere le seguenti funzionalita:
-...
+Since homer is a home assistant it should have these functionalities: 
+... (copy from the word document)
 % 	\item La suddetta intelligenza artificiale dovrà occuparsi di coordinare le attività all'interno
 % delle camere di test di Aperture, guidando l'utente attraverso un certo numero di sfide di
 % difficoltà crescente. Una camera di test è un ambiente realizzato da Aperture Laboratories Inc. al
