@@ -50,10 +50,13 @@ The software will provide a dashboard to the user to allow control of the device
 	\item Should be reasonably performant to run on a desktop/laptop
 \end{itemize}
 
+\section{Analysis and domain model}
 
-\section{Analisi e modello del dominio}
+The application will emulate a domotic controller connected to home devices.
+The home devices will also be emulated, each with its own logic.
+The user will be able to interact with the devices via the controller with a dashboard.
 
-The application is a domotic controller, and it will emulate devices that can be controlled by a dashboard.
+The main difficulty will be modelling the communication between the controller and the different devices, which can vary in functioning.
 
 \begin{figure}[H]
 \centering{}
