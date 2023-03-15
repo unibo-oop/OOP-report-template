@@ -29,37 +29,37 @@
 
 \chapter{Analysis}
 
-\section{Requirements}
-
 HOMER (HOMe EmulatoR) is an emulated domotic controller connected to lights, windows, and other domestic facilities.
-The smart environment is mananged through a dashboard which allows the user to control devices, monitor sensors and electrical consumptions.
+The smart environment is mananged through a dashboard which allows the user to control devices, monitor sensors and consumptions.
+
+\section{Requirements}
 
 \subsubsection{Functional Requirements}
 
 \begin{itemize}
-	\item Control of lights and electrical outlets
-	\item Control of doors, locks and windows
-	\item Monitoring of temperature and air quality
-	\item Monitoring of electrical consumption
-	\item Dashboard for the control and monitoring of the devices
-	\item Logger
+	\item Control of lights and electrical outlets.
+	\item Control of doors, locks and windows.
+	\item Monitoring of temperature and air quality.
+	\item Monitoring of electrical consumption.
+	\item Dashboard for the control and monitoring of the devices.
+	\item Logger.
+	\item Smart automation scenes.
 \end{itemize}
 
 \subsubsection{Non-Functional Requirements}
 \begin{itemize}
 	\item Should be reasonably performant to run on a desktop/laptop.
-	\item Should meet minimal security requirements for user recognition.
-	\item Should be smart enough to consistenly manage the whole house-system.  
 \end{itemize}
 
 \section{Analysis and domain model}
 
-The application will emulate a domotic environment, some smart devices and facilities monitoring.
-Smart devices are common domestic devices as lights, electrical outlets, windows, doors and various sensors 
+The application will emulate a domotic environment with some smart devices and facilities monitoring.
+Smart devices are usual domestic devices as lights, electrical outlets, windows, doors and various sensors 
 for monitoring indoor temperature and air quality along with electrical absorption.
 The user will interact with the devices via the controller through a dashboard.
 
-The main difficulty will be implementing a communication protocol for the controller and the devices, which can vary in functioning and technical aspects. 
+The main difficulties will be implementing a communication protocol between the controller and the devices, and simulating physics of
+temperature and air quality along with electrical consumption, in real-time.
 
 \begin{figure}[H]
 \centering{}
@@ -71,9 +71,34 @@ The main difficulty will be implementing a communication protocol for the contro
 \chapter{Design}
 \section{Architecture}
 
-HOMER follows the MVC pattern. This is because we want to clearly seperate the application's business 
-logic from the view, and make our software as modular as possibile. Our main building block is the Device interface, 
-and every device will be responsible for its own behaviour.
+For the developement of HOMER the MVC pattern will be followed.
+This is because the Team wants to clearly seperate the application's business 
+logic from the view, and make our software as modular as possibile. 
+%Our main building block is the Device interface, 
+%and every device will be responsible for its own behaviour.
+%INSERT GENERAL ARCHITECTURE UML
+\subsubsection{Model}
+The Model takes care of data access and modification, thus its main task is going to be providing the application status to the controller.
+In this case the application status is represented by the devices' statuses. 
+To provide such functionality, the Model of our application is represented by the Device interface, its extensions and implementations.
+
+%INSERT MODEL UML
+
+\subsubsection{View}
+%INSERT VIEW DESCRIPTION
+%INSERT VIEW UML
+
+\subsubsection{Controller}
+The Controller has the task to coordinate the interactions between the user and the View, and requesting the Model to compute them.
+Once the Model finishes to elaborate the new state, the Controller will request the View to change accordingly to the new application's state.
+To avoid building a "God Class" we chose to split the Controller in a gerarchic structure, encapsulated by the main Controller interface which has
+access to the Model and the View.
+
+*ADD LIST OF THE PARTS OF THE CONTROLLER*
+%INSERT CONTROLLER UML
+
+By splitting the architecture of the controller we achieved high extensibility possibilities, in fact each pair View-Controller was indipendent from the others.
+ 
 
 \section{Detailed Design}
 
@@ -116,6 +141,14 @@ La presenza di pattern di progettazione \emph{correttamente utilizzati} è valut
 %
 L'uso inappropriato è invece valutato negativamente: a tal proposito, si raccomanda di porre particolare attenzione all'abuso di Singleton, che, se usato in modo inappropriato, è di fatto un anti-pattern.
 
+\subsection{Ceccacci Michele}
+\subsection{Magnani Simone}
+\subsection{Monticelli Alessandro}
+\subsubsection{Lights}
+\subsubsection{Outlets}
+\subsubsection{Electrical Meter}
+\subsubsection{Device dashboard}
+\subsubsection{Electrical meter dashboard}
 \subsection*{Elementi positivi}
 
 \begin{itemize}
@@ -132,6 +165,8 @@ dichiara di aver usato Observer, è necessario specificare chi sia l'observable 
 si usa Template Method, è necessario indicare quale sia il metodo template; se si usa Strategy, è
 necessario identificare l'interfaccia che rappresenta la strategia; e via dicendo.
 \end{itemize}
+
+\
 
 \subsection*{Elementi negativi}
 \begin{itemize}
