@@ -141,7 +141,6 @@ reificarli in interfacce.
 \subsection*{Elementi positivi}
 \begin{itemize}
 	\item Viene descritto accuratamente il modello del dominio.
-	\item Alcuni problemi, se non risolubili in assoluto o nel monte ore, vengono dichiarati come problemi che non saranno risolti o sarano risolti in futuro.
 	\item Si modella il dominio in forma di UML, descrivendolo appropriatamente.
 \end{itemize}
 
@@ -150,7 +149,7 @@ reificarli in interfacce.
 	\item Manca una descrizione a parole del modello del dominio.
 	\item Manca una descrizione UML delle entità del dominio e delle relazioni che intercorrono fra loro.
 	\item Vengono elencate soluzioni ai problemi, invece della descrizione degli stessi.
-	\item Vengono presentati elementi di design, o peggio aspetti implementativi.
+	\item Vengono presentati elementi di design, o peggio, aspetti implementativi.
 	\item Viene mostrato uno schema UML che include elementi implementativi o non utili alla descrizione del dominio, ma volti alla soluzione (non devono vedersi, ad esempio, campi o metodi privati, o cose che non siano equivalenti ad interfacce).
 \end{itemize}
 
@@ -166,15 +165,11 @@ GLaDOS è responsabile di associare a ciascun challenge un insieme di consigli (
 GLaDOS dovrà poter comunicare coi locali cucina per approntare le torte.
 %
 Le torte potranno essere dolci, oppure semplici promesse di dolci che verranno disattese.
-
+%
 Gli elementi costitutivi il problema sono sintetizzati in \Cref{img:analysis}.
 
-La difficoltà primaria sarà quella di riuscire a correlare lo stato corrente dell'utente e gli eventi in modo tale da generare i corretti suggerimenti.
-%
-Questo richiederà di mettere in campo appropriate strategie di intelligenza artificiale.
-
 Data la complessità di elaborare consigli via AI senza intervento umano, la prima versione del software fornita prevederà una serie di consigli forniti dall'utente.
-
+%
 Il requisito non funzionale riguardante il consumo energetico richiederà studi specifici sulle performance di GLaDOS che non potranno essere effettuati all'interno del monte ore previsto: tale feature sarà oggetto di futuri lavori.
 
 \begin{figure}[H]
