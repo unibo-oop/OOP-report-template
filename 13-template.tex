@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
+\usepackage{xcolor}
 \usepackage{hyperref}
 
 % Questo commentalo se vuoi scrivere in inglese.
@@ -67,18 +68,25 @@ alle tecnologie implementative, ovvero, non si deve indicare come il software sa
 %
 La fase di analisi, infatti, \textit{precede} qualunque azione di design o di implementazione.
 
-\section{Descrizione}
+\section{Descrizione e requisiti}
 
 Nella sezione di descrizione va descritto cosa il software deve fare.
 %
 Al termine della lettura della sezione,
-il docente deve avere un'idea molto chiara di cosa l'applicazione sia.
+il docente deve avere un'idea molto chiara di cosa l'applicazione sia
+e di cosa essa debba fare.
+%
+Si consiglia di elencare i requisiti in modo schematico, idealmente separando i requisiti funzionali
+(\emph{cosa} fa il sistema)
+da quelli non funzionali
+(\emph{come} lo fa, ad esempio in termini di prestazioni, sicurezza, portabilità).
 
 \subsection*{Elementi positivi}
 \begin{itemize}
 	\item Si fornisce una descrizione in linguaggio naturale di ciò che il software dovrà fare.
 	\item Gli obiettivi sono spiegati con chiarezza, per punti.
 	\item Se vi sono termini il cui significato non è immediatamente intuibile, essi vengono spiegati.
+	\item Vengono descritti separatamente requisiti funzionali e non funzionali.
 \end{itemize}
 
 \subsection*{Elementi negativi}
@@ -88,7 +96,9 @@ il docente deve avere un'idea molto chiara di cosa l'applicazione sia.
 \end{itemize}
 
 \subsection*{Esempio}
-Il software, commissionato dal gestore del centro di ricerca ``Aperture Laboratories Inc.''\footnote{\url{http://aperturescience.com/}}, mira alla costruzione di una intelligenza artificiale di nome GLaDOS (Genetic Lifeform and Disk Operating System).
+Il software, commissionato dal centro di ricerca ``Aperture Laboratories Inc.''\footnote{
+\url{https://www.youtube.com/watch?v=f7ZS97eW2yE}
+}, mira alla costruzione di una intelligenza artificiale di nome GLaDOS (Genetic Lifeform and Disk Operating System).
 %
 Per intelligenza artificiale si intende un software in grado di assumere decisioni complesse in maniera semi autonoma sugli argomenti di sua competenza, a partire dai vincoli e dagli obiettivi datigli dall'utente.
 %
@@ -100,6 +110,30 @@ o la costruzione di portali per il teletrasporto.
 %
 Un portale per il teletrasporto è un'apertura bidimensionale nel tessuto spazio-temporale,
 che consente a chiunque vi entri di uscire dall'altro portale.
+%
+I rompicapi sono di tipo fisico (ad
+esempio, manipolazione di oggetti, pressione di pulsanti, azionamento di leve), e si ritengono
+conclusi una volta che il soggetto riesce a trovare l'uscita dalla camera di test.
+%
+Alla conclusione di tutti i labirinti,
+al soggetto verrà offerta una torta.
+\definecolor{lie}{HTML}{FAFAFA}
+\textcolor{lie}{\ldots Or not. The cake is a \underline{lie!}}
+
+\subsubsection{Requisiti funzionali}
+\begin{itemize}
+	\item Il piano preciso ed il numero delle sfide sarà variabile,
+	e GLaDOS dovrà essere in grado di adattarsi dinamicamente e di fornire indicazioni di guida.
+	\item La personalità di GLaDOS dovrà essere modificabile.
+	\item GLaDOS dovrà essere in grado di comunicare col reparto cucina di Aperture
+	per ordinare torte per coloro che completassero tutti i test con successo.
+\end{itemize}
+
+\subsubsection{Requisiti non funzionali}
+\begin{itemize}
+	\item GLaDOS dovrà essere estremamente efficiente nell'uso delle risorse. Le specifiche tecniche parlano della possibilità di funzionare su dispositivi alimentati da una batteria a patata.
+\end{itemize}
+
 
 \section{Modello del Dominio}
 
@@ -122,7 +156,7 @@ reificarli in interfacce.
 
 \subsection*{Elementi positivi}
 \begin{itemize}
-	\item Si modella il dominio in forma di UML.
+	\item Si modella il dominio in forma di UML\@.
 	\item Viene descritto accuratamente il modello del dominio.
 	\item Il modello cattura le entità di dominio, le loro caratteristiche principali,
 	\item e le relazioni che intercorrono fra di loro.
@@ -132,7 +166,7 @@ reificarli in interfacce.
 \begin{itemize}
 	\item Manca una descrizione a parole del modello del dominio.
 	\item Manca una descrizione UML delle entità del dominio e delle relazioni che intercorrono fra loro.
-	\item Vengono presentati elementi di design, o peggio, aspetti implementativi.
+	\item Vengono presentati elementi di design, o peggio, implementativi.
 	\item Viene mostrato uno schema UML che include elementi implementativi o non utili alla descrizione del dominio,
 	ma volti alla soluzione (non devono vedersi, ad esempio, campi o metodi privati).
 \end{itemize}
@@ -162,50 +196,6 @@ Il requisito non funzionale riguardante il consumo energetico richiederà studi 
 	\caption{Schema UML dell'analisi del problema, con rappresentate le entità principali ed i rapporti fra loro}
 	\label{img:analysis}
 \end{figure}
-
-\section{Requisiti}
-
-Nell'analisi dei \emph{requisiti} dell'applicazione si dovrà spiegare cosa l'applicazione dovrà fare.
-%
-È consigliato descrivere separatamente i requisiti funzionali
-(\emph{cosa} fa il sistema)
-da quelli non funzionali
-(\emph{come} lo fa, ad esempio in termini di prestazioni, sicurezza, portabilità).
-
-\subsection*{Elementi positivi}
-\begin{itemize}
-	\item Si fornisce una descrizione in linguaggio naturale di ciò che il software dovrà fare.
-	\item Gli obiettivi sono spiegati con chiarezza, per punti.
-	\item Vengono descritti separatamente requisiti funzionali e non funzionali.
-\end{itemize}
-
-\subsection*{Elementi negativi}
-\begin{itemize}
-	\item Si forniscono indicazioni circa le soluzioni che si vogliono adottare.
-	\item Si forniscono dettagli di tipo tecnico o implementativo (parlando di classi, linguaggi di programmazione, librerie, eccetera).
-\end{itemize}
-
-\subsection*{Esempio}
-
-\subsubsection{Requisiti funzionali}
-\begin{itemize}
-	\item La suddetta intelligenza artificiale dovrà occuparsi di coordinare le attività all'interno
-delle camere di test di Aperture, guidando l'utente attraverso un certo numero di sfide di
-difficoltà crescente. Una camera di test è un ambiente realizzato da Aperture Laboratories Inc. al
-fine di mettere alla prova le proprie tecnologie di manipolazione dell'ambiente. All'interno della
-camera di test, un soggetto qualificato è incaricato di sfruttare gli strumenti messi a
-disposizione da Aperture per risolvere alcuni rompicapi. I rompicapi sono di tipo fisico (ad
-esempio, manipolazione di oggetti, pressione di pulsanti, azionamento di leve), e si ritengono
-conclusi una volta che il soggetto riesce a trovare l'uscita dalla camera di test.
-	\item Il piano preciso ed il numero delle sfide sarà variabile, e GLaDOS dovrà essere in grado di adattarsi dinamicamente e di fornire indicazioni di guida.
-	\item La personalità di GLaDOS dovrà essere modificabile.
-	\item GLaDOS dovrà essere in grado di comunicare col reparto cucina di Aperture, per ordinare torte da donare agli utenti che completassero l'ultima camera di test con successo.
-\end{itemize}
-
-\subsubsection{Requisiti non funzionali}
-\begin{itemize}
-	\item GLaDOS dovrà essere estremamente efficiente nell'uso delle risorse. Le specifiche tecniche parlano della possibilità di funzionare su dispositivi alimentati da una batteria a patata.
-\end{itemize}
 
 \chapter{Design}
 
@@ -239,7 +229,8 @@ Raccomandiamo di porre particolare attenzione al design dell'interazione fra vie
 \begin{itemize}
  \item Si mostrano pochi, mirati schemi UML dai quali si deduce con chiarezza quali sono le parti principali del software e come interagiscono fra loro.
  \item Si mette in evidenza se e come il pattern architetturale model-view-controller è stato applicato, anche con l'uso di un UML che mostri le interfacce principali ed i rapporti fra loro.
- \item Si discute se sia semplice o meno, con l'architettura scelta, sostituire in blocco la view: in un MVC ben fatto, controller e modello non dovrebbero in alcun modo cambiare se si transitasse da una libreria grafica ad un'altra (ad esempio, da Swing a JavaFX, o viceversa).
+ \item Si discute se sia semplice o meno, con l'architettura scelta, sostituire in blocco la view:
+ 	in un MVC ben fatto, controller e modello non dovrebbero in alcun modo cambiare se si transitasse da una libreria grafica ad un'altra (ad esempio, da Swing a JavaFX, o viceversa).
 \end{itemize}
 
 \subsection*{Elementi negativi}
